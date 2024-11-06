@@ -25,6 +25,15 @@ function renderTable() {
 
 	currentData.forEach((item, index) => {
 		const row = tableBody.insertRow();
+		// Lấy ô đầu tiên của hàng
+		const cell = row.insertCell();
+
+		// Thêm class "text-center" vào ô
+		cell.classList.add('text-center');
+
+		// Thêm nội dung vào ô
+		cell.textContent = startIndex + index + 1;
+		
 		row.insertCell().textContent = startIndex + index + 1;
 		row.insertCell().textContent = item.so_cong_van;
 		row.insertCell().textContent = formatDate(item.ngay_cong_van);
