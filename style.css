@@ -8,6 +8,6 @@ body {
  #fromDate, #toDate, #data-table tr {
   cursor: pointer; /* Thay đổi con trỏ thành hình bàn tay */
 }
-.form-control.page-input, .input-group-text, .form-control#searchInput, .form-control#fromDate, .form-control#toDate{
+.form-control.page-input, .input-group-text, .form-control#searchInput, .form-control#fromDate, .form-control#toDate {
   font-size: small;
 }
