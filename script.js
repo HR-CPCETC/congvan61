@@ -33,7 +33,7 @@ function renderTable() {
 
 		// Thêm nội dung vào ô
 		cell.textContent = startIndex + index + 1;
-		
+
 		row.insertCell().textContent = item.so_cong_van;
 		row.insertCell().textContent = formatDate(item.ngay_cong_van);
 		row.insertCell().textContent = item.so_den;
@@ -177,19 +177,20 @@ searchInput.addEventListener('keyup', (event) => {
 });
 
 searchButton.addEventListener('click', () => {
-    const searchText = searchInput.value.toLowerCase();
-    const fromDate = fromDateInput.value;
-    const toDate = toDateInput.value;
+	const searchText = searchInput.value.toLowerCase();
+	const fromDate = fromDateInput.value;
+	const toDate = toDateInput.value;
 
-    // Lọc từ dữ liệu gốc
-    data = originalData.filter(item => {
-        const trichYeuMatch = item.trich_yeu.toLowerCase().includes(searchText);
-        const soCongVanMatch = item.so_cong_van.toLowerCase().includes(searchText); // Thêm điều kiện kiểm tra số công văn
-        const dateMatch = (!fromDate || new Date(item.ngay_cong_van) >= new Date(fromDate)) &&
-                          (!toDate || new Date(item.ngay_cong_van) <= new Date(toDate));
-        return (trichYeuMatch || soCongVanMatch) && dateMatch; // Kết hợp điều kiện
-    });
+	// Lọc từ dữ liệu gốc
+	data = originalData.filter((item) => {
+		const trichYeuMatch = item.trich_yeu.toLowerCase().includes(searchText);
+		const soCongVanMatch = item.so_cong_van.toLowerCase().includes(searchText); // Thêm điều kiện kiểm tra số công văn
+		const dateMatch =
+			(!fromDate || new Date(item.ngay_cong_van) >= new Date(fromDate)) &&
+			(!toDate || new Date(item.ngay_cong_van) <= new Date(toDate));
+		return (trichYeuMatch || soCongVanMatch) && dateMatch; // Kết hợp điều kiện
+	});
 
-    currentPage = 1;
-    renderTable();
+	currentPage = 1;
+	renderTable();
 });
