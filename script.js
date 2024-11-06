@@ -34,7 +34,6 @@ function renderTable() {
 		// Thêm nội dung vào ô
 		cell.textContent = startIndex + index + 1;
 		
-		row.insertCell().textContent = startIndex + index + 1;
 		row.insertCell().textContent = item.so_cong_van;
 		row.insertCell().textContent = formatDate(item.ngay_cong_van);
 		row.insertCell().textContent = item.so_den;
