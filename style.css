@@ -1,0 +1,14 @@
+body {
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: smaller;
+  font-weight:500;
+ }
+
+ /* style.css */
+
+ #fromDate, #toDate, #data-table tr {
+  cursor: pointer; /* Thay đổi con trỏ thành hình bàn tay */
+}
+.form-control.page-input {
+  font-size: small;
+}
